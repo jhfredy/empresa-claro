@@ -4,10 +4,19 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, SoftDeletes;
+
+    /**
+     * Roles del usuario
+     * @var array
+     */
+    public static $ROLES = [
+        'admistrador', 'tecnico', 'operador'
+    ];
 
     /**
      * The attributes that are mass assignable.
@@ -26,4 +35,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    
+    public function citas() {
+        return $this->hasMany(Cita::class);
+    }
+
+    
 }
