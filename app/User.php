@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     public static $ROLES = [
-        'admistrador', 'tecnico', 'operador'
+        'admin', 'tecnico', 'operador'
     ];
 
     /**
