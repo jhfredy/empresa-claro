@@ -1,6 +1,7 @@
 import Vue from "vue";
 import "./bootstrap";
 
+
 new Vue({
     el: '#app',
     components: {},
@@ -11,7 +12,7 @@ new Vue({
         }
     },
     created() {
-        axios.get('/api/usuarios').then(response => {
+        axios.get('/api/usuarios/').then(response => {
             this.usuarios = response.data;
         });
     },
@@ -22,7 +23,7 @@ new Vue({
 
         },
         destroy(user) {
-            axios.delete('/api/usuarios' + user.id)
+            axios.delete('/api/usuarios/' + user.id)
                 .then(() => {
                     this.usuarios = this.data = this.usuarios.filter(value => value != user);
                 });

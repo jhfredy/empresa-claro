@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
             ['name'=>'root',
              'email'=>'root@app.com',
              'password'=>bcrypt('12345'),
-              'rol'=>'admistrador'
+              'rol'=>'admin'
             ],
             ['name'=>'operador',
              'email'=>'operador@app.com',

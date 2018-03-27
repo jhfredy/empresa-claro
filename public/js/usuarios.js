@@ -43042,7 +43042,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     created: function created() {
         var _this = this;
 
-        axios.get('/api/usuarios').then(function (response) {
+        axios.get('/api/usuarios/').then(function (response) {
             _this.usuarios = response.data;
         });
     },
@@ -43055,7 +43055,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         destroy: function destroy(user) {
             var _this2 = this;
 
-            axios.delete('/api/usuarios' + user.id).then(function () {
+            axios.delete('/api/usuarios/' + user.id).then(function () {
                 _this2.usuarios = _this2.data = _this2.usuarios.filter(function (value) {
                     return value != user;
                 });
