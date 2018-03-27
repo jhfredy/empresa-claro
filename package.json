@@ -21,7 +21,6 @@
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.2",
     "toastr": "^2.1.4",
-    "vue-currency-filter": "^2.1.0",
     "vuejs-paginator": "^2.0.2"
   }
 }
