@@ -1,13 +1,19 @@
 import Vue from "vue";
 import "./bootstrap";
+import bModal from "bootstrap-vue/es/components/modal/modal";
+import bButton from "bootstrap-vue/es/components/button/button";
+
+
 
 
 new Vue({
     el: '#app',
-    components: {},
+    components: { bModal, bButton },
     data() {
         return {
             usuarios: [],
+            modal: false,
+
 
         }
     },
@@ -18,8 +24,10 @@ new Vue({
     },
     methods: {
         add(usuarios) {
-            this.usuarios.push(usuario);
+
+            this.usuarios.push(usuarios);
             this.data = this.usuarios;
+
 
         },
         destroy(user) {
@@ -27,6 +35,9 @@ new Vue({
                 .then(() => {
                     this.usuarios = this.data = this.usuarios.filter(value => value != user);
                 });
+        },
+        openCreateModal() {
+            this.$refs.myModal.show();
         }
     }
 });

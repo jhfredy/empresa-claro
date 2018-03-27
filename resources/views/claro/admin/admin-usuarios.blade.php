@@ -27,6 +27,19 @@
             </tbody>
         </table>
     </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <b-button class="btn btn-dark center" @click="openCreateModal()">
+        <i class="fa fa-plus"></i> Crear Usuario</b-button>
+      </div>
+    </div>
+
+    <b-modal ref="myModal" hide-footer title="REGISTRO DE USUARIOS">
+      <div class="d-block text-center">
+        Hola
+      </div>
+    </b-modal>
+    
     </div>
   </div>
 </div>
