@@ -43029,6 +43029,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__bootstrap__);
 
 
+
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app',
     components: {},
@@ -43039,7 +43040,27 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         };
     },
     created: function created() {
-        axios.get('usuarios');
+        var _this = this;
+
+        axios.get('/api/usuarios').then(function (response) {
+            _this.usuarios = response.data;
+        });
+    },
+
+    methods: {
+        add: function add(usuarios) {
+            this.usuarios.push(usuario);
+            this.data = this.usuarios;
+        },
+        destroy: function destroy(user) {
+            var _this2 = this;
+
+            axios.delete('/api/usuarios' + user.id).then(function () {
+                _this2.usuarios = _this2.data = _this2.usuarios.filter(function (value) {
+                    return value != user;
+                });
+            });
+        }
     }
 });
 
