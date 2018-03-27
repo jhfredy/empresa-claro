@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::resource('usuarios', 'UserController',[
     'only'=>['index','store','update','destroy'],
 ]);
+
+
+Route::resource('servicio', 'ServicioController', [
+    'only' => ['index']
+]);
