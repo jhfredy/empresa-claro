@@ -20,6 +20,8 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.0.0-rc.2",
-        "vue-currency-filter": "^2.1.0"
+        "vue-currency-filter": "^2.1.0",
+        "toastr": "^2.1.4",
+        "vuejs-paginator": "^2.0.2"
     }
 }
