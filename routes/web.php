@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/usuarios','AdminController@usuarios')->name('usuarios');
