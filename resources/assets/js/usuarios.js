@@ -3,13 +3,13 @@ import "./bootstrap";
 new Vue({
     el: '#app',
     components: {},
-    data(){
-        return{
-            usuarios:[],
-            
+    data() {
+        return {
+            usuarios: [],
+
         }
     },
-    created(){
+    created() {
         axios.get('usuarios')
     }
 });
