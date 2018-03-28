@@ -28,3 +28,8 @@ Route::resource('departamento', 'DepartamentoController', [
     'only' => ['index']
 ]);
 
+
+// Clientes
+Route::resource('cliente', 'ClienteController', [
+    'only' => ['index', 'store']
+]);

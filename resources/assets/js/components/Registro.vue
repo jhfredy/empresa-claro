@@ -6,12 +6,17 @@
         </h4>
       </div>
       <div class="card-body"> 
-        <form>
-          <form-input-h name="nombre" label="Nombre:"/>
-          <form-input-h name="cedula" label="Cedula:"/>
-          <form-input-h type="email" name="correo" label="Correo:"/>
-          <form-input-h type="tel" name="telefono" label="Teléfono:"/>
-          <form-input-h name="direccion" label="Dirección:"/>
+        <form @submit.prevent="registrar()">
+          <form-input-h name="nombre" label="Nombre:" 
+            v-model="cliente.nombre"/>
+          <form-input-h name="cedula" label="Cedula:" 
+            v-model="cliente.cedula"/>
+          <form-input-h type="email" name="correo" label="Correo:" 
+            v-model="cliente.correo"/>
+          <form-input-h type="tel" name="telefono" label="Teléfono:" 
+            v-model="cliente.telefono"/>
+          <form-input-h name="direccion" label="Dirección:"
+            v-model="cliente.direccion"/>
           <form-ubicacion @municipio="cliente.municipio_id = $event"/>
           <button class="btn btn-primary m-auto d-block" type="submit">Contratar</button>
         </form>
@@ -25,7 +30,20 @@ export default {
     components: { FormInputH, FormUbicacion },
     props: ['servicio'],
     data() {
-      return { cliente: {} }
+      return { cliente: {}, validacion: {} }
+    },
+    mounted() {
+      this.cliente.servicio_id = this.servicio.id
+    },
+    methods: {
+      registrar() {
+        axios.post('/api/cliente', this.cliente)
+          .then(res => this.$emit('created', {
+            cliente: res.data,
+            servicio: this.servicio
+          }))
+          .catch(reason => this.validacion = reason.response.data.errors)
+      }
     }
 };
 </script>

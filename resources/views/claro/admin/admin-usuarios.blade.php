@@ -70,5 +70,5 @@
 @endsection
 
 @push('scripts')
-    <script src="/js/usuarios.js"></script>
+    <script src="/dist/usuarios.js"></script>
 @endpush

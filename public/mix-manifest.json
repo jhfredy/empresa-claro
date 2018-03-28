@@ -1,4 +1,4 @@
 {
-    "/js/registro.js": "/js/registro.js",
-    "/js/usuarios.js": "/js/usuarios.js"
+    "/dist/usuarios.js": "/dist/usuarios.js",
+    "/dist/registro.js": "/dist/registro.js"
 }
