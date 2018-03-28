@@ -36,7 +36,28 @@
 
     <b-modal ref="myModal" hide-footer title="REGISTRO DE USUARIOS">
       <div class="d-block text-center">
-        Hola
+        <div>
+            <b-form @submit.prevent="store()">
+                <b-form-input  v-model="newUser.name"type="text" placeholder="Nombre" required>
+                    <div class="form-control-feedback">{{ formError[0] }}</div>
+                </b-form-input>
+                <br>
+                <b-form-input v-model="newUser.email" type="email" placeholder="Email" required></b-form-input>
+                <br>
+                <b-form-input v-model="newUser.password"type="password" placeholder="Contraseña" required></b-form-input>
+                <br>
+                <b-form-input v-model="newUser.password_confirmation" type="password" placeholder="Confirmar Contraseña" required></b-form-input>
+                <br>
+                <b-form-select v-model="newUser.rol" label="Rol" name="Rol" :options="roles" >
+        
+                </b-form-select>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-blue">
+                    <i class="fa fa-plus"></i>Registrar
+                </button>
+            </b-form>
+        </div>
       </div>
     </b-modal>
     
