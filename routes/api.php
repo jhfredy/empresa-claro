@@ -12,12 +12,19 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-//CRUD de usuarios
+// CRUD de usuarios
 Route::resource('usuarios', 'UserController',[
     'only'=>['index','store','update','destroy'],
 ]);
 
-
+// Consulta de Servicios
 Route::resource('servicio', 'ServicioController', [
     'only' => ['index']
 ]);
+
+// Consulta de ubicacion
+Route::get('departamento/{departamento}/municipios', 'DepartamentoController@municipios');
+Route::resource('departamento', 'DepartamentoController', [
+    'only' => ['index']
+]);
+

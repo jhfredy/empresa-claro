@@ -4,7 +4,7 @@
 <section id="servicios">
   <div class="container">
     <div class="row justify-content-center" v-if="servicio">
-      <div class="col-md-10 col-sm-12">
+      <div class="col-md-12 col-lg-10">
         <registro :servicio="servicio"></registro>
       </div>
     </div>
