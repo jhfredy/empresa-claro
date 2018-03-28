@@ -19,10 +19,10 @@ new Vue({
             newUser: {},
             formError: {},
             rol: null,
-            roles: [{ value: null, text: 'Seleccionar', },
-                { value: 'admin', text: 'admin' },
-                { value: 'operador', text: 'operador' },
-                { value: 'tecnico', text: 'tecnico' },
+            roles: [
+                { value: 'admin', text: 'Administrador' },
+                { value: 'operador', text: 'Operador' },
+                { value: 'tecnico', text: 'Tecnico' },
             ],
             show: true,
         }
@@ -44,7 +44,7 @@ new Vue({
                     this.$refs.myModal.hide();
                     toastr.success('Usuario Creado Correctamente');
                 })
-                .catch(error => this.formError = error.response.data)
+                .catch(error => this.formError = error.response.data);
         },
 
         destroy(user) {

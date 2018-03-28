@@ -38,8 +38,11 @@
       <div class="d-block text-center">
         <div>
             <b-form @submit.prevent="store()">
+              
                 <b-form-input  v-model="newUser.name"type="text" placeholder="Nombre" required>
-                    <div class="form-control-feedback">{{ formError[0] }}</div>
+                    <span v-if="formError.name" class=" help-block">
+                        <strong></strong>
+                    </span>
                 </b-form-input>
                 <br>
                 <b-form-input v-model="newUser.email" type="email" placeholder="Email" required></b-form-input>

@@ -43675,7 +43675,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
             newUser: {},
             formError: {},
             rol: null,
-            roles: [{ value: null, text: 'Seleccionar' }, { value: 'admin', text: 'admin' }, { value: 'operador', text: 'operador' }, { value: 'tecnico', text: 'tecnico' }],
+            roles: [{ value: 'admin', text: 'Administrador' }, { value: 'operador', text: 'Operador' }, { value: 'tecnico', text: 'Tecnico' }],
             show: true
         };
     },
