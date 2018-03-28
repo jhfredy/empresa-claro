@@ -2,9 +2,9 @@
     <div class="form-group">
         <label :for="name">{{ label }}</label>
         <select class="form-control" :name="name" @change="input" v-bind="$attrs">
-            <option v-for="(label, value) in options" :key="value" :value="value" 
-                :selected="selected == value">
-                {{ label }}
+            <option value="" selected></option>
+            <option v-for="option in options" :key="option.value" :value="option.value">
+                {{ option.text }}
             </option>
         </select>
     </div>
@@ -15,7 +15,7 @@ export default {
     mixins: [InputField],
     props: {
         label: String,
-        options: Object,
+        options: Array,
         selected: String
     },
     mounted() {

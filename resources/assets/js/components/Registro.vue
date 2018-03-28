@@ -7,11 +7,12 @@
       </div>
       <div class="card-body"> 
         <form>
-          <form-input-h name="nombre" label="Nombre:"></form-input-h>
-          <form-input-h name="cedula" label="Cedula:"></form-input-h>
-          <form-input-h type="email" name="correo" label="Correo:"></form-input-h>
-          <form-input-h type="tel" name="telefono" label="Teléfono:"></form-input-h>
-          <form-input-h name="direccion" label="Dirección:"></form-input-h>
+          <form-input-h name="nombre" label="Nombre:"/>
+          <form-input-h name="cedula" label="Cedula:"/>
+          <form-input-h type="email" name="correo" label="Correo:"/>
+          <form-input-h type="tel" name="telefono" label="Teléfono:"/>
+          <form-input-h name="direccion" label="Dirección:"/>
+          <form-ubicacion @municipio="cliente.municipio_id = $event"/>
           <button class="btn btn-primary m-auto d-block" type="submit">Contratar</button>
         </form>
       </div>
@@ -19,8 +20,12 @@
 </template>
 <script>
 import FormInputH from './inputs/FormInputH'
+import FormUbicacion from './inputs/FormUbicacion'
 export default {
-    components: { FormInputH },
-    props: ['servicio']
+    components: { FormInputH, FormUbicacion },
+    props: ['servicio'],
+    data() {
+      return { cliente: {} }
+    }
 };
 </script>
