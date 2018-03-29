@@ -9,7 +9,7 @@
   <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
-      @include('layouts.dash.breadcrump')
+      {{-- @include('layouts.dash.breadcrump') --}}
       @yield('body')
     </div>
     

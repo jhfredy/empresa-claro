@@ -5,3 +5,6 @@
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 <!-- Custom scripts for all pages-->
 <script src="js/sb-admin.min.js"></script>
+
+<script src="{{ asset('dist/manifest.js') }}"></script>
+<script src="{{ asset('dist/vendor.js') }}"></script>

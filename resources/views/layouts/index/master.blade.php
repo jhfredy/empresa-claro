@@ -36,8 +36,10 @@
     @include('layouts.index.footer')
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('dist/manifest.js') }}"></script>
+    <script src="{{ asset('dist/vendor.js') }}"></script>
     @stack('scripts')
 
   </body>

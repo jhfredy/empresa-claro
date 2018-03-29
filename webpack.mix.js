@@ -14,3 +14,6 @@ let mix = require('laravel-mix');
 mix
     .js('resources/assets/js/usuarios.js', 'public/dist/')
     .js('resources/assets/js/registro.js', 'public/dist/')
+    .js('resources/assets/js/tecnico.js', 'public/dist/')
+    .js('resources/assets/js/operador.js', 'public/dist/')
+    .extract(['vue', 'jquery', 'lodash', 'axios'])
