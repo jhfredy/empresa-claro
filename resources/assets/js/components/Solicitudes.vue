@@ -16,12 +16,15 @@
         <td class="text-uppercase">{{ cliente.solicitud.estado }}</td>
         <td>${{ cliente.solicitud.ingreso | currency }}</td>
         <td>
-          <button class="btn btn-info btn-sm">Detalles</button>
+          <button class="btn btn-info btn-sm" @click="$emit('detallar', cliente)">
+            Detalles
+          </button>
         </td>
         <td>
           <button 
             class="btn btn-primary btn-sm" 
-            v-if="cliente.solicitud.estado == 'pedido'">
+            v-if="cliente.solicitud.estado == 'pedido'"
+            @click="$emit('habilitar', cliente)">
             Habilitar
           </button>
         </td>
@@ -32,7 +35,7 @@
 <script>
 export default {
   data() {
-    return { clientes: [], detalle: null };
+    return { clientes: [] };
   },
   created() {
     axios.get("/api/cliente").then(res => (this.clientes = res.data));
