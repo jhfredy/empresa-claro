@@ -14,7 +14,7 @@ export default {
 	},
 	data() {
 		return {
-			errorClass: 'has-error'
+			errorClass: 'is-invalid'
 		}
 	},
 	methods: {

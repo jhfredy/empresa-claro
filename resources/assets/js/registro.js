@@ -4,8 +4,10 @@ import Servicios from './components/Servicios'
 import Registro from './components/Registro'
 import Alert from 'bootstrap-vue/es/components/alert/alert';
 import CurrencyFilter from 'vue-currency-filter'
+import Validate from './plugins/Validate'
 
 Vue.use(CurrencyFilter)
+Vue.use(Validate)
 
 new Vue({
     el: '#servicios',

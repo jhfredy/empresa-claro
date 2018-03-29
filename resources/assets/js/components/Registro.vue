@@ -6,17 +6,33 @@
         </h4>
       </div>
       <div class="card-body"> 
-        <form @submit.prevent="registrar()">
+        <form @submit.prevent="safeExec(registrar)">
+
           <form-input-h name="nombre" label="Nombre:" 
-            v-model="cliente.nombre"/>
+            v-model="cliente.nombre"
+            v-validate="'required|alpha_spaces'"
+            :error-messages="errors.collect('nombre')"/>
+
           <form-input-h name="cedula" label="Cedula:" 
-            v-model="cliente.cedula"/>
+            v-model="cliente.cedula"
+            v-validate="'required|numeric'"
+            :error-messages="errors.collect('cedula')"/>
+
           <form-input-h type="email" name="correo" label="Correo:" 
-            v-model="cliente.correo"/>
+            v-model="cliente.correo"
+            v-validate="'required|email'"
+            :error-messages="errors.collect('correo')"/>
+
           <form-input-h type="tel" name="telefono" label="Teléfono:" 
-            v-model="cliente.telefono"/>
+            v-model="cliente.telefono"
+            v-validate="'required'"
+            :error-messages="errors.collect('telefono')"/>
+
           <form-input-h name="direccion" label="Dirección:"
-            v-model="cliente.direccion"/>
+            v-model="cliente.direccion"
+            v-validate="'required'"
+            :error-messages="errors.collect('direccion')"/>
+
           <form-ubicacion @municipio="cliente.municipio_id = $event"/>
           <button class="btn btn-primary m-auto d-block" type="submit">Contratar</button>
         </form>
@@ -30,7 +46,7 @@ export default {
     components: { FormInputH, FormUbicacion },
     props: ['servicio'],
     data() {
-      return { cliente: {}, validacion: {} }
+      return { cliente: {} }
     },
     mounted() {
       this.cliente.servicio_id = this.servicio.id
@@ -42,7 +58,7 @@ export default {
             cliente: res.data,
             servicio: this.servicio
           }))
-          .catch(reason => this.validacion = reason.response.data.errors)
+          .catch(reason => this.setErrors(reason.response.data.errors))
       }
     }
 };
