@@ -33,3 +33,6 @@ Route::resource('departamento', 'DepartamentoController', [
 Route::resource('cliente', 'ClienteController', [
     'only' => ['index', 'store']
 ]);
+
+// Tecnicos
+Route::get('user/tecnicos', 'TecnicoController@tecnicos');
