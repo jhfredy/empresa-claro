@@ -15,7 +15,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        Cliente::with('solicitud', 'municipio.departamento')->get();
+        return Cliente::with('solicitud.servicio', 'municipio.departamento')->get();
     }
 
     /**
