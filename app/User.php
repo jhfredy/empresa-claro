@@ -41,5 +41,9 @@ class User extends Authenticatable
         return $this->hasMany(Cita::class);
     }
 
+    public function scopeTecnicos($query) {
+        return $query->where('rol', 'tecnico');
+    }
+
     
 }
