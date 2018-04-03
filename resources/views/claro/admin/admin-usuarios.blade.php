@@ -39,21 +39,11 @@
         <div>
             <b-form @submit.prevent="store()">
               
-                <b-form-input  v-model="newUser.name"type="text" placeholder="Nombre" required>
-                    <span v-if="formError.name" class=" help-block">
-                        <strong></strong>
-                    </span>
-                </b-form-input>
-                <br>
-                <b-form-input v-model="newUser.email" type="email" placeholder="Email" required></b-form-input>
-                <br>
-                <b-form-input v-model="newUser.password"type="password" placeholder="Contraseña" required></b-form-input>
-                <br>
-                <b-form-input v-model="newUser.password_confirmation" type="password" placeholder="Confirmar Contraseña" required></b-form-input>
-                <br>
-                <b-form-select v-model="newUser.rol" label="Rol" name="Rol" :options="roles" >
-        
-                </b-form-select>
+                <form-input name="nombre" placeholder="Nombre" v-model="newUser.name" v-validate="'required|alpha_spaces'" :error-messages="errors.collect('nombre')"> </form-input>
+                <form-input  name="email" placeholder="Email" v-model="newUser.email" v-validate="'required|email'" :error-messages="errors.collect('email')"></form-input>
+                <form-input name="password" placeholder="Contraseña" v-model="newUser.password" type="password" v-validate="'required|min:6'" :error-messages="errors.collect('password')"></form-input>
+                <form-input  type="password" name="password_confirmation"  v-model="newUser.password_confirmation" v-validate="{ required: true, confirmed: newUser.password }" :error-messages="errors.collect('password')" placeholder="Confirmación Contraseña"></form-input>
+                <b-form-select v-model="newUser.rol" label="Rol" name="Rol" :options="roles" ></b-form-select>
                 <br>
                 <br>
                 <button type="submit" class="btn btn-blue">

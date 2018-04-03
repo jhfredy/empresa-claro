@@ -5,13 +5,17 @@ import bButton from "bootstrap-vue/es/components/button/button";
 import bFormInput from "bootstrap-vue/es/components/form-input/form-input";
 import bForm from "bootstrap-vue/es/components/form/form";
 import bFormSelect from "bootstrap-vue/es/components/form-select/form-select";
+import Validate from './plugins/Validate';
+import Alert from 'bootstrap-vue/es/components/alert/alert';
+import CurrencyFilter from 'vue-currency-filter';
+import FormInput from './components/inputs/FormInput';
 
 
 
-
+Vue.use(Validate)
 new Vue({
     el: '#app',
-    components: { bModal, bButton, bFormInput, bForm, bFormSelect },
+    components: { bModal, bButton, bFormInput, bForm, bFormSelect, FormInput, Validate },
     data() {
         return {
             usuarios: [],
@@ -44,7 +48,7 @@ new Vue({
                     this.$refs.myModal.hide();
                     toastr.success('Usuario Creado Correctamente');
                 })
-                .catch(error => this.formError = error.response.data);
+                .catch(error => this.formError = this.setErrors(error.response.data.errors));
         },
 
         destroy(user) {
