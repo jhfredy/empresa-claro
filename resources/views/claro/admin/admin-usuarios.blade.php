@@ -18,8 +18,8 @@
                     <td v-text="user.email"></td>
                     <td v-text="user.rol"></td>
                     <td>
-                      <button class="editar-modal btn btn-danger" title="Eliminar Usuario" @click.prevent="destroy(user)" >
-                        
+                      <!--<button class="editar-modal btn btn-danger" title="Eliminar Usuario" @click.prevent="destroy(user)" > -->
+                    <button class="editar-modal btn btn-danger" title="Eliminar Usuario" @click.prevent="openDeleteModal(user)" >
                             <span class="fa fa-trash"></span>
                         </button>
                     </td>
@@ -34,6 +34,7 @@
       </div>
     </div>
 
+    
     <b-modal ref="myModal" hide-footer title="REGISTRO DE USUARIOS">
       <div class="d-block text-center">
         <div>
@@ -53,6 +54,19 @@
         </div>
       </div>
     </b-modal>
+    <!--inicio eliminar usuarios-->
+    <b-modal ref="myModalDelete" hide-footer title="Eliminar usuario">
+        ¿Desea eliminar el Usuario <strong>@{{deleteUser.name}}</strong>?
+        <br>
+        <div class="justify-content">
+            <button class="btn btn-danger" @click="destroy(deleteUser)">
+                <i class="fa fa-trash"></i>Eliminar Usuario
+            </button>
+            <button type="button" class="btn btn-dark" @click="hideModal()">
+                <i class="fa fa-ban"></i>Cancelar
+            </button>
+        </div>
+    </b-modal>
     
     </div>
   </div>
@@ -61,4 +75,5 @@
 
 @push('scripts')
     <script src="/dist/usuarios.js"></script>
+    <script src="/vendor/bootstrap/bootstrap-toastr/toastr.js"></script>
 @endpush

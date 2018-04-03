@@ -23,6 +23,7 @@ new Vue({
             newUser: {},
             formError: {},
             rol: null,
+            deleteUser: {},
             roles: [
                 { value: 'admin', text: 'Administrador' },
                 { value: 'operador', text: 'Operador' },
@@ -55,11 +56,21 @@ new Vue({
             axios.delete('/api/usuarios/' + user.id)
                 .then(() => {
                     this.usuarios = this.data = this.usuarios.filter(value => value != user);
+                    this.$refs.myModalDelete.hide();
+                    toastr.info('Usuario Eliminado Correctamente');
                 });
+
 
         },
         openCreateModal() {
             this.$refs.myModal.show();
+        },
+        openDeleteModal(user) {
+            this.deleteUser = user;
+            this.$refs.myModalDelete.show();
+        },
+        hideModal() {
+            this.$refs.myModalDelete.hide();
         }
     }
 });
