@@ -38,7 +38,12 @@ export default {
     return { clientes: [] };
   },
   created() {
-    axios.get("/api/cliente").then(res => (this.clientes = res.data));
+    this.fetch()
+  },
+  methods: {
+    fetch() {
+      axios.get("/api/cliente").then(res => (this.clientes = res.data));
+    }
   }
 };
 </script>

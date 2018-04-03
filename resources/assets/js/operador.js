@@ -21,6 +21,10 @@ new Vue({
         habilitar(cliente) {
             this.cliente = cliente;
             this.$refs.cita.show();
+        },
+        habilitado(cita) {
+            this.$refs.cita.hide();
+            this.$refs.solicitudes.fetch();
         }
     }
 })

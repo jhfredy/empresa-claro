@@ -36,3 +36,8 @@ Route::resource('cliente', 'ClienteController', [
 
 // Tecnicos
 Route::get('user/tecnicos', 'TecnicoController@tecnicos');
+
+// Citas
+Route::resource('cita', 'CitaController', [
+    'only' => 'store'
+]);

@@ -4,13 +4,13 @@
     Solicitudes De Servicio
   </div>
   <div class="card-body">
-    <solicitudes @detallar="detallar" @habilitar="habilitar"></solicitudes>
+    <solicitudes ref="solicitudes" @detallar="detallar" @habilitar="habilitar"/>
   </div>
   <modal ref="detalle" title="Detalles" hide-footer>
-    <detalle-solicitud v-if="cliente" :cliente="cliente"></detalle-solicitud>
+    <detalle-solicitud v-if="cliente" :cliente="cliente"/>
   </modal>
   <modal ref="cita" title="Asignar Cita" hide-footer>
-    <cita-form v-if="cliente" :cliente="cliente"></cita-form>
+    <cita-form v-if="cliente" :cliente="cliente" @updated="habilitado"></cita-form>
   </modal>
 </div>
 
