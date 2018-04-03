@@ -40,7 +40,7 @@
         <div>
             <b-form @submit.prevent="store()">
               
-                <form-input name="nombre" placeholder="Nombre" v-model="newUser.name" v-validate="'required|alpha_spaces'" :error-messages="errors.collect('nombre')"> </form-input>
+                <form-input name="name" placeholder="Nombre" v-model="newUser.name" v-validate="'required|alpha_spaces'" :error-messages="errors.collect('name')"> </form-input>
                 <form-input  name="email" placeholder="Email" v-model="newUser.email" v-validate="'required|email'" :error-messages="errors.collect('email')"></form-input>
                 <form-input name="password" placeholder="Contraseña" v-model="newUser.password" type="password" v-validate="'required|min:6'" :error-messages="errors.collect('password')"></form-input>
                 <form-input  type="password" name="password_confirmation"  v-model="newUser.password_confirmation" v-validate="{ required: true, confirmed: newUser.password }" :error-messages="errors.collect('password')" placeholder="Confirmación Contraseña"></form-input>
@@ -72,6 +72,9 @@
   </div>
 </div>
 @endsection
+@push('head')
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap-toastr/toastr.css">
+@endpush
 
 @push('scripts')
     <script src="/dist/usuarios.js"></script>
