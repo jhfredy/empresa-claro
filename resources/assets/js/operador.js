@@ -5,6 +5,7 @@ import DetalleSolicitud from './components/DetalleSolicitud'
 import CitaForm from './components/CitaForm'
 import Modal from 'bootstrap-vue/es/components/modal/modal';
 import CurrencyFilter from 'vue-currency-filter'
+import Axios from 'axios';
 
 
 Vue.use(CurrencyFilter)
@@ -22,9 +23,19 @@ new Vue({
             this.cliente = cliente;
             this.$refs.cita.show();
         },
-        habilitado(cita) {
+        habilitado() {
             this.$refs.cita.hide();
             this.$refs.solicitudes.fetch();
+        },
+        confirmar(cliente) {
+            this.cliente = cliente;
+            this.$refs.confirmacion.show()
+        },
+        async confirmado() {
+            await axios.post('/api/solicitud/confirmar/' + this.cliente.solicitud.id)
+            await this.$refs.solicitudes.fetch();
+            this.$refs.confirmacion.hide();
+            toastr.success('Servicio Confirmado!')
         }
     }
 })

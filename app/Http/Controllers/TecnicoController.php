@@ -15,6 +15,11 @@ class TecnicoController extends Controller
     public function tecnicos() {
         return User::tecnicos()->get();
     }
+
+    public function citas() {
+        $user = auth()->user();
+        return $user->citas()->with('solicitud.servicio', 'solicitud.cliente.municipio.departamento')->get();
+    }
     
     
 }

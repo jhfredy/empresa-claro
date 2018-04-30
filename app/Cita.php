@@ -11,8 +11,10 @@ class Cita extends Model
         'solicitud_id', 'user_id', 'fecha'
     ];
 
-    protected $casts = [
-        'fecha' => 'date'
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'fecha'
     ];
 
     public function solicitud() {
