@@ -1,8 +1,9 @@
 {
+    "/dist/operador.js": "/dist/operador.js",
+    "/dist/vendor.js": "/dist/vendor.js",
     "/dist/usuarios.js": "/dist/usuarios.js",
     "/dist/vendor.js": "/dist/vendor.js",
     "/dist/registro.js": "/dist/registro.js",
-    "/dist/operador.js": "/dist/operador.js",
     "/dist/tecnico.js": "/dist/tecnico.js",
     "/dist/manifest.js": "/dist/manifest.js"
 }

@@ -1,5 +1,5 @@
 <template>
-    <table class="table table-responsive-sm table-bordered table-hover table-sm">
+    <table class="table table-bordered table-hover table-sm">
         <tbody>
             <tr>
                 <th>Nombre:</th>

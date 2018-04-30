@@ -3,9 +3,13 @@
 @section('body')
 <section id="servicios">
   <div class="container">
-    <div class="row justify-content-center" v-if="servicio">
+    <div class="row justify-content-center mb-3" v-if="servicio">
       <div class="col-md-12 col-lg-10">
         <registro :servicio="servicio" @created="registro"></registro>
+        <hr>
+        <button class="btn btn-secondary m-auto d-block" @click="servicio = null">
+          Cancelar
+        </button>
       </div>
     </div>
     <section v-else>

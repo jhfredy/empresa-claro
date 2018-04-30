@@ -33,3 +33,15 @@ Route::resource('departamento', 'DepartamentoController', [
 Route::resource('cliente', 'ClienteController', [
     'only' => ['index', 'store']
 ]);
+
+// Tecnicos
+Route::get('user/tecnicos', 'TecnicoController@tecnicos');
+
+// Citas
+Route::resource('cita', 'CitaController', [
+    'only' => 'store'
+]);
+
+
+Route::get('tecnico/citas', 'TecnicoController@citas');
+Route::post('solicitud/confirmar/{solicitud}', 'OperadorController@confirmar');
