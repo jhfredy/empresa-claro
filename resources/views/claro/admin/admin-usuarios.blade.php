@@ -72,11 +72,8 @@
   </div>
 </div>
 @endsection
-@push('head')
-    <link rel="stylesheet" href="vendor/bootstrap/bootstrap-toastr/toastr.css">
-@endpush
+
 
 @push('scripts')
     <script src="/dist/usuarios.js"></script>
-    <script src="/vendor/bootstrap/bootstrap-toastr/toastr.js"></script>
 @endpush

@@ -13,5 +13,5 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap-toastr/toastr.css">
   </head>

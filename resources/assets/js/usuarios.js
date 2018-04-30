@@ -1,13 +1,11 @@
-import Vue from "vue";
 import "./bootstrap";
+import Vue from "vue";
 import bModal from "bootstrap-vue/es/components/modal/modal";
 import bButton from "bootstrap-vue/es/components/button/button";
 import bFormInput from "bootstrap-vue/es/components/form-input/form-input";
 import bForm from "bootstrap-vue/es/components/form/form";
 import bFormSelect from "bootstrap-vue/es/components/form-select/form-select";
 import Validate from './plugins/Validate';
-import Alert from 'bootstrap-vue/es/components/alert/alert';
-import CurrencyFilter from 'vue-currency-filter';
 import FormInput from './components/inputs/FormInput';
 
 
@@ -15,7 +13,7 @@ import FormInput from './components/inputs/FormInput';
 Vue.use(Validate)
 new Vue({
     el: '#app',
-    components: { bModal, bButton, bFormInput, bForm, bFormSelect, FormInput, Validate },
+    components: { bModal, bButton, bFormInput, bForm, bFormSelect, FormInput },
     data() {
         return {
             usuarios: [],

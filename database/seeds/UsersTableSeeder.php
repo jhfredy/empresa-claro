@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
             ['name'=>'tecnico',
              'email'=>'tecnico@app.com',
              'password'=>bcrypt('12345'),
-              'rol'=>'tecnico'
+             'rol'=>'tecnico'
             ],
         ]);
     }
