@@ -41,3 +41,12 @@ Route::get('user/tecnicos', 'TecnicoController@tecnicos');
 Route::resource('cita', 'CitaController', [
     'only' => 'store'
 ]);
+
+// Citas del tecnico
+Route::get('tecnico/citas', 'TecnicoController@citas');
+
+// Confirmar Servicio del operador
+Route::post('solicitud/confirmar/{solicitud}', 'OperadorController@confirmar');
+
+// Utilidad
+Route::get('utilidad/solicitudes', 'UtilidadController');

@@ -21,12 +21,16 @@
           </button>
         </td>
         <td>
-          <button 
-            class="btn btn-primary btn-sm" 
-            v-if="cliente.solicitud.estado == 'pedido'"
-            @click="$emit('habilitar', cliente)">
-            Habilitar
-          </button>
+          <template v-if="cliente.solicitud.estado == 'pedido'">
+            <button class="btn btn-primary btn-sm" @click="$emit('habilitar', cliente)">
+              Habilitar
+            </button>
+          </template>
+          <template v-if="cliente.solicitud.estado == 'habilitado'">
+            <button class="btn btn-success btn-sm" @click="$emit('confirmar', cliente)">
+              Confirmar
+            </button>
+          </template>
         </td>
       </tr>
     </tbody>
