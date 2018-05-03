@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
   <div class="container">
-    <a class="navbar-brand" href="#">CLARO</a>
+    <img  src="{{asset('img/logo-claro.png')}}" class="img-responsive" style="width:4em">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
