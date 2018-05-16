@@ -17,8 +17,11 @@ new Vue({
         this.solicitudes = (await axios.get('/api/utilidad/solicitudes')).data
     },
     computed: {
-        total() {
+        ingreso() {
             return sumBy(this.solicitudes, 'ingreso')
+        },
+        egreso() {
+            return sumBy(this.solicitudes, 'servicio.gasto')
         }
     }
 })

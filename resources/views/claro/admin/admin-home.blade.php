@@ -4,7 +4,7 @@
         Utilidad
     </div>
     <div class="card-body">
-        <total-utilidad :total="total"></total-utilidad>
+        <total-utilidad :ingreso="ingreso" :egreso="egreso"></total-utilidad>
         <tabla-utilidad :solicitudes="solicitudes"></tabla-utilidad>
     </div>
 </div>

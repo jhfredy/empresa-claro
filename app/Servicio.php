@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Servicio extends Model
 {
     protected $fillable = [
-        'nombre', 'costo'
+        'nombre', 'costo', 'gasto'
     ];
 
     public function solicitudes() {

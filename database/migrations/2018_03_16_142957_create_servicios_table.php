@@ -17,6 +17,7 @@ class CreateServiciosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->integer('costo');
+            $table->integer('gasto');
             $table->timestamps();
         });
     }

@@ -8,16 +8,19 @@
       @include('layouts.dash.sidenav')
       {{--  SideNav Toggler  --}}
       @include('layouts.dash.sidenav-toggler')
+      {{-- Usuario Logueado --}}
+      @include('layouts.dash.current-user')
       <ul class="navbar-nav ml-auto">
         {{--  Mensajes  --}}
-        @include('layouts.dash.mensajes')
+        {{-- @include('layouts.dash.mensajes') --}}
 
         {{--  Notificaciones  --}}
-        @include('layouts.dash.notificaciones')
+        {{-- @include('layouts.dash.notificaciones') --}}
 
         {{--  Busqueda  --}}
-        @include('layouts.dash.busqueda')
+        {{-- @include('layouts.dash.busqueda') --}}
 
+        
         {{--  Logout  --}}
         @include('layouts.dash.logout')
       </ul>
