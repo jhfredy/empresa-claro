@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}" >
-    <title>SB Admin - Start Bootstrap Template</title>
+    <title>CLARO SCM</title>
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap-toastr/toastr.css">
