@@ -2,7 +2,7 @@
   <div class="masthead-content">
     <div class="container">
       {{-- <h1 class="masthead-heading mb-0">One Page Wonder</h1> --}}
-      <h2 class="masthead-subheading mb-0">Simulación de el modelo de cadena de abastecimiento de claro</h2>
+      <h2 class="masthead-subheading mb-0">Simulación de cadena de abastecimiento de servicios para la empresa claro</h2>
       <a href="#servicios" class="btn btn-primary btn-xl rounded-pill mt-5">Servicios</a>
     </div>
   </div>
